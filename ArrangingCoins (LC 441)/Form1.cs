@@ -20,16 +20,17 @@ namespace ArrangingCoins__LC_441_
         private void processButton_Click(object sender, EventArgs e)
         {
             int userNum;
-            int count = 1;
+            int count = 0;
             int row = 1;
 
             if (int.TryParse(numTextBox.Text, out userNum))
             {
-                while (userNum - row > row)
+                while (row < userNum)
                 {
-                    userNum -= 1;
+
+                    row += (row + 1);
                     count++;
-                    row++;
+                    
                 }
                 
                 MessageBox.Show("The number of complete rows = " + count);
